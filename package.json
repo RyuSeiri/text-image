@@ -1,6 +1,6 @@
 {
   "name": "@sunny-117/text-image",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "publishConfig": {
     "access": "public"
   },
@@ -8,6 +8,10 @@
   "main": "lib/index.cjs",
   "module": "lib/index.js",
   "types": "lib/index.d.ts",
+  "files": [
+    "lib",
+    "package.json"
+  ],
   "scripts": {
     "build": "vite build",
     "tsup": "tsup",
