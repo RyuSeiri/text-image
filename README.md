@@ -48,7 +48,7 @@ createTextImage({
 })
 ```
 
-### 画图片
+### Draw image
 
 ```js
 import { createTextImage } from '@sunny-117/text-image'
