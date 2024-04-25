@@ -1,95 +1,73 @@
-# text-image 库使用说明
+# text-image
 
 ![](./logo.png)
 
-`text-image`可以将文字、图片、视频进行「文本化」
+English|[简体中文](./README-zh.md)
 
-只需要通过简单的配置即可使用
+🐛🐛🐛 `text-image` can "textify" text, images, and videos, and can be used with simple configuration
 
-## 体验地址
+
+## Website
 
 https://sunny-117.github.io/text-image/
 
-## 开始
+## Install
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Document</title>
-  </head>
-  <body>
-    <canvas id="demo"></canvas>
-    <script src="./text-image/dist/text-image.iife.js"></script>
-    <script>
-      textImage.createTextImage({
-        canvas: document.getElementById('demo'),
-        source: {
-          text: 'Text Image', // 绘制的文本是：Text Image
-          fontFamily: 'Roboto Mono',
-        },
-      });
-    </script>
-  </body>
-</html>
+```bash
+npm i @sunny-117/text-image
 ```
 
-`text-image`打包了 3 个版本的文件：
-
-1. `text-image.iife.js`：适用于传统的引入方式，将暴露一个全局变量`textImage`，包含方法`createTextImage`
-
-2. `text-image.js`：适用于基于 ESM 的方式导入
-
-   ```js
-   import { createTextImage } from './dist/text-image.js'
-   ```
-
-3. `text-image.umd.cjs`：适用于基于 UMD 的方式导入
-
-## 画文字
+## Usage
 
 ```js
-textImage.createTextImage({
-  // 必填，配置canvas元素，最终作画在其上完成
+import { createTextImage } from '@sunny-117/text-image'
+```
+
+### Draw text
+
+```js
+import { createTextImage } from '@sunny-117/text-image'
+createTextImage({
+  // Required, configure the canvas element, and complete the final drawing on it
   canvas: document.querySelector('canvas'),
-  // 可选，配置作画的文本，默认为'6'
+  // Optional, configure the text for drawing, default to '6'
   replaceText: '6',
-  // 可选，配置作画半径，该值越大越稀疏，默认为 10
+  // Optional, configure drawing radius, the larger the value, the sparser it will be, default to 10
   raduis: 10,
-  // 可选，配置是否灰度化，若开启灰度化则会丢失色彩，默认为 false
+  // Optional, configure whether to grayscale. If grayscale is enabled, colors will be lost, default to false
   isGray: false,
-  // 必填，配置作画内容
+  // Required, configure drawing content
   source: {
-    // 必填，配置画什么文本
+    // Required, configure what text to draw
     text: 'Text Image',
-    // 选填，配置文本使用的字体，CSS 格式，默认为微软雅黑
+    // Optional, configure the font used for text, CSS format, default to Microsoft Yahei
     fontFamily: 'Microsoft YaHei',
-    // 选填，配置文本尺寸，默认为 200
+    // Optional, configure text size, default to 200
     fontSize: 200
   },
 })
 ```
 
-## 画图片
+### 画图片
 
 ```js
-textImage.createTextImage({
-  // 必填，配置canvas元素，最终作画在其上完成
+import { createTextImage } from '@sunny-117/text-image'
+createTextImage({
+  // Required, configure the canvas element, and complete the final drawing on it
   canvas: document.querySelector('canvas'),
-  // 可选，配置作画的文本，默认为'6'
+  // Optional, configure the text for drawing, default to '6'
   replaceText: '6',
-  // 可选，配置作画半径，该值越大越稀疏，默认为 10
+  // Optional, configure drawing radius, the larger the value, the sparser it will be, default to 10
   raduis: 10,
-  // 可选，配置是否灰度化，若开启灰度化则会丢失色彩，默认为 false
+  // Optional, configure whether to grayscale. If grayscale is enabled, colors will be lost, default to false
   isGray: false,
-  // 必填，配置作画内容
+  // Required, configure drawing content
   source: {
-    // 必填，配置画的图片路径
+    // Required, configure the image path for drawing
     img: 'path',
-    // 选填，配置图片宽度，默认为图片自身宽度
+    // Optional, configure image width, default to the width of the image itself
     width: 500,
-    // 选填，配置图片高度，默认为图片自身高度
+    // Optional, configure image height, default to the height of the image itself
     height: 300
   },
 })
@@ -97,27 +75,32 @@ textImage.createTextImage({
 
 
 
-## 画视频
+## Draw a video
 
 ```js
-textImage.createTextImage({
-  // 必填，配置canvas元素，最终作画在其上完成
+import { createTextImage } from '@sunny-117/text-image'
+createTextImage({
+  // Required, configure the canvas element, and complete the final drawing on it
   canvas: document.querySelector('canvas'),
-  // 可选，配置作画的文本，默认为'6'
+  // Optional, configure the text for drawing, default to '6'
   replaceText: '6',
-  // 可选，配置作画半径，该值越大越稀疏，默认为 10
+  // Optional, configure drawing radius, the larger the value, the sparser it will be, default to 10
   raduis: 10,
-  // 可选，配置是否灰度化，若开启灰度化则会丢失色彩，默认为 false
+  // Optional, configure whether to grayscale. If grayscale is enabled, colors will be lost, default to false
   isGray: false,
-  // 必填，配置作画内容
+  // Required, configure drawing content
   source: {
-    // 必填，配置画的视频路径
+    // Required, configure the video path for drawing
     video: 'path',
-    // 选填，配置视频宽度，默认为视频自身宽度
+    // Optional, configure video width, default to the width of the video itself
     width: 500,
-    // 选填，配置视频高度，默认为视频自身高度
+    // Optional, configure video height, default to the height of the video itself
     height: 300
   },
 })
 ```
 
+
+# License
+
+Released under the MIT License. Refer to the LICENSE file for more information."
