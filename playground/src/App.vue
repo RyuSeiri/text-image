@@ -1,25 +1,13 @@
 <template>
-  <canvas></canvas>
-  <video-demo></video-demo>
+  <text-demo></text-demo>
+  <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+    <image-demo></image-demo>
+    <video-demo></video-demo>
+  </div>
 </template>
 
 <script setup>
-import { createTextImage } from '@sunny-117/text-image';
+import TextDemo from './TextDemo.vue'
+import ImageDemo from './ImageDemo.vue'
 import VideoDemo from './VideoDemo.vue'
-import {onMounted} from 'vue';
-
-onMounted(() => {
-  createTextImage({
-    canvas: document.querySelector('canvas'),
-    source: {
-      text: 'Text Image',
-    },
-  });
-})
 </script>
-
-<style scoped>
-.titleBox {
-  background-color: blueviolet;
-}
-</style>
