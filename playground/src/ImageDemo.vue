@@ -14,6 +14,7 @@ onMounted(() => {
     raduis: 7,
     isGray: true,
     source: {
+      // build: img: "/text-image/1.png",
       img: "../public/1.png",
       width: 800,
       height: 700,
