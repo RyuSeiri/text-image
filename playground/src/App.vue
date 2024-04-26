@@ -1,9 +1,11 @@
 <template>
   <canvas></canvas>
+  <video-demo></video-demo>
 </template>
 
 <script setup>
 import { createTextImage } from '@sunny-117/text-image';
+import VideoDemo from './VideoDemo.vue'
 import {onMounted} from 'vue';
 
 onMounted(() => {
